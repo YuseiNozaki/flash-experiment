@@ -1,7 +1,6 @@
 # flash-experiment
 
 ---
----
 
 ## overview
 This code used in university flash experiment.
