@@ -1,6 +1,10 @@
-### flash-experiment
+flash-experiment
 
 ---
 
-# overview
-used in university flash experiment.
+## overview
+This code used in university flash experiment.
+
+## usage
+-Save csv format data file in working directory.
+-
