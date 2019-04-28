@@ -18,7 +18,7 @@ int main(){
 	double time[1024], abs[1024], a, b;
 	char fname[1024];
 
-	printf("file name of data:");
+	printf("file name:");
 
 	scanf("%s", fname);
 
