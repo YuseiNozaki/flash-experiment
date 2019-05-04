@@ -38,7 +38,7 @@ int main(){
 void data_read(char fname[], double x[], double y[], int *n){
 
 	FILE *fp;
-	int ret, i = 0;
+	int ret, i=0;
 	
 	fp = fopen(fname, "r");
 
@@ -70,8 +70,8 @@ void log_arr(double arr[], int n){
 // least squares method
 void lsm(double x[], double y[], int n, double *a, double *b){
     
-    	int i = 0, j = 0;
-    	double x_ave = 0, y_ave = 0, x_dis = 0, cov = 0;
+    	int i, j;
+    	double x_ave=0, y_ave=0, x_dis=0, cov=0;
 
     	// average of x,y
     	for(i=0; i<n; i++){
@@ -82,11 +82,11 @@ void lsm(double x[], double y[], int n, double *a, double *b){
     	// dispersion of x
     	// covariance
     	for(j=0; j<n; j++){
-        	x_dis += (x[j] - x_ave) * (x[j] - x_ave) / n;
-        	cov += (x[j] - x_ave) * (y[j] - y_ave) / n;
+        	x_dis += (x[j]-x_ave) * (x[j]-x_ave) / n;
+        	cov += (x[j]-x_ave) * (y[j]-y_ave) / n;
     	}
 
 	*a = cov / x_dis;
 
-	*b = y_ave - *a * x_ave;
+	*b = y_ave - *a*x_ave;
 }
