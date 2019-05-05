@@ -30,6 +30,8 @@ int main(){
 
 	printf("a = %f\nb = %f\n", a, b);
 
+        printf("expr = exp(%f) * exp(%f * x)\n", b, a);
+
 	return 0;
 }
 
