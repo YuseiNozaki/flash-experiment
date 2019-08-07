@@ -2,7 +2,7 @@
 #include <math.h>
 
 
-// read date into array
+// read data into array
 void data_read(char [], double [], double [], int *);
 
 // log of array
@@ -13,7 +13,7 @@ void lsm(double [], double [], int, double *, double *);
 
 
 int main(){
-
+	
 	int n;
 	double time[1024], abs[1024], a, b;
 	char fname[1024];
@@ -30,7 +30,7 @@ int main(){
 
 	printf("a = %f\nb = %f\n", a, b);
 
-        printf("expr = exp(%f) * exp(%f * x)\n", b, a);
+    printf("expr = exp(%f) * exp(%f * x)\n", b, a);
 
 	return 0;
 }
@@ -46,7 +46,7 @@ void data_read(char fname[], double x[], double y[], int *n){
 
 	if(fp == NULL){
 		printf("File could not be opened.\n");
-        }
+    }
 
 	while((ret = fscanf(fp, "%lf, %lf", &x[i], &y[i])) != EOF){
 		i++; 
@@ -73,7 +73,7 @@ void log_arr(double arr[], int n){
 void lsm(double x[], double y[], int n, double *a, double *b){
     
     	int i, j;
-    	double x_ave=0, y_ave=0, x_dis=0, cov=0;
+    	double x_ave = 0, y_ave = 0, x_dis = 0, cov = 0;
 
     	// average of x,y
     	for(i=0; i<n; i++){
@@ -84,11 +84,11 @@ void lsm(double x[], double y[], int n, double *a, double *b){
     	// dispersion of x
     	// covariance
     	for(j=0; j<n; j++){
-        	x_dis += (x[j]-x_ave) * (x[j]-x_ave) / n;
-        	cov += (x[j]-x_ave) * (y[j]-y_ave) / n;
+        	x_dis += (x[j] - x_ave) * (x[j] - x_ave) / n;
+        	cov += (x[j] - x_ave) * (y[j] - y_ave) / n;
     	}
 
 	*a = cov / x_dis;
 
-	*b = y_ave - *a*x_ave;
+	*b = y_ave - *a * x_ave;
 }
