@@ -13,7 +13,7 @@ void lsm(double [], double [], int, double *, double *);
 
 
 int main(){
-	
+
 	int n;
 	double time[1024], abs[1024], a, b;
 	char fname[1024];
@@ -29,8 +29,8 @@ int main(){
 	lsm(time, abs, n, &a, &b);
 
 	printf("a = %f\nb = %f\n", a, b);
-
-    printf("expr = exp(%f) * exp(%f * x)\n", b, a);
+	
+	printf("expr = exp(%f) * exp(%f * x)\n", b, a);
 
 	return 0;
 }
@@ -46,7 +46,7 @@ void data_read(char fname[], double x[], double y[], int *n){
 
 	if(fp == NULL){
 		printf("File could not be opened.\n");
-    }
+	}
 
 	while((ret = fscanf(fp, "%lf, %lf", &x[i], &y[i])) != EOF){
 		i++; 
